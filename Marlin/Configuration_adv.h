@@ -1099,7 +1099,7 @@
   //#define SHAPING_MENU                // Add a menu to the LCD to set shaping parameters.
 #endif
 
-#define AXIS_RELATIVE_MODES { false, false, false, false }
+#define AXIS_RELATIVE_MODES { false, false, false }
 
 // Add a Duplicate option for well-separated conjoined nozzles
 //#define MULTI_NOZZLE_DUPLICATION
@@ -3321,12 +3321,12 @@
  *
  * See https://marlinfw.org/docs/configuration/2.0.9/laser_spindle.html for more config details.
  */
-//#define SPINDLE_FEATURE
+#define SPINDLE_FEATURE
 //#define LASER_FEATURE
 #if EITHER(SPINDLE_FEATURE, LASER_FEATURE)
-  #define SPINDLE_LASER_ACTIVE_STATE    LOW    // Set to "HIGH" if SPINDLE_LASER_ENA_PIN is active HIGH
+  #define SPINDLE_LASER_ACTIVE_STATE    HIGH    // Set to "HIGH" if SPINDLE_LASER_ENA_PIN is active HIGH
 
-  #define SPINDLE_LASER_USE_PWM                // Enable if your controller supports setting the speed/power
+  // #define SPINDLE_LASER_USE_PWM                // Enable if your controller supports setting the speed/power
   #if ENABLED(SPINDLE_LASER_USE_PWM)
     #define SPINDLE_LASER_PWM_INVERT    false  // Set to "true" if the speed/power goes up when you want it to go slower
     #define SPINDLE_LASER_FREQUENCY     2500   // (Hz) Spindle/laser frequency (only on supported HALs: AVR, ESP32, and LPC)
@@ -3341,9 +3341,9 @@
     //#define AIR_EVACUATION_PIN        42     // Override the default Cutter Vacuum or Laser Blower pin
   #endif
 
-  //#define AIR_ASSIST                         // Air Assist control with G-codes M8-M9
+  #define AIR_ASSIST                         // Air Assist control with G-codes M8-M9
   #if ENABLED(AIR_ASSIST)
-    #define AIR_ASSIST_ACTIVE           LOW    // Active state on air assist pin
+    #define AIR_ASSIST_ACTIVE           HIGH    // Active state on air assist pin
     //#define AIR_ASSIST_PIN            44     // Override the default Air Assist pin
   #endif
 
@@ -3360,7 +3360,7 @@
    *  - RPM     (S0 - S50000)  Best for use with a spindle
    *  - SERVO   (S0 - S180)
    */
-  #define CUTTER_POWER_UNIT PWM255
+  #define CUTTER_POWER_UNIT RPM
 
   /**
    * Relative Cutter Power

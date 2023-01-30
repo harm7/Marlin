@@ -237,8 +237,8 @@
 //
 #define HEATER_BED_PIN                      PA1   // Hotbed
 #define HEATER_0_PIN                        PA2   // Heater0
-#define HEATER_1_PIN                        PA3   // Heater1
-#define HEATER_2_PIN                        PB10  // Heater2
+// #define HEATER_1_PIN                        PA3   // Heater1
+// #define HEATER_2_PIN                        PB10  // Heater2
 #define HEATER_3_PIN                        PB11  // Heater3
 
 #define FAN_PIN                             PA8   // Fan0
@@ -247,6 +247,9 @@
 #define FAN3_PIN                            PD13  // Fan3
 #define FAN4_PIN                            PD14  // Fan4
 #define FAN5_PIN                            PD15  // Fan5
+
+#define SPINDLE_LASER_ENA_PIN               PA3
+#define AIR_ASSIST_PIN                      PB10
 
 //
 // SD Support
